@@ -9,10 +9,10 @@ class ProductItem extends Component {
     };
 
     return (
-      <div
-        onClick={toDetailPage}
-        className='w-full px-2 mb-4 cursor-pointer md:w-1/2 lg:w-1/3'>
-        <div className='overflow-hidden bg-white rounded shadow'>
+      <div className='w-full px-2 mb-4 md:w-1/2 lg:w-1/3'>
+        <div
+          onClick={toDetailPage}
+          className='overflow-hidden bg-white rounded shadow cursor-pointer'>
           <img className='w-full p-4' src={product.image} alt={product.title} />
           <div className='px-6 py-4'>
             <div className='mb-2 text-xl font-bold text-fuchsia-500'>

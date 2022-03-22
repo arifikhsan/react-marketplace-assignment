@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductItem from '../components/product-item';
+import { UserContext } from '..';
 
 const ProductPage = () => {
+  const username = useContext(UserContext);
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchData() {
@@ -11,12 +13,12 @@ const ProductPage = () => {
     }
     fetchData();
   }, []);
-
+  
   return (
     <div className='bg-gray-100'>
       <div className='max-w-3xl min-h-screen px-4 pt-8 pb-12 mx-auto md:px-0'>
         <h1 className='text-3xl font-bold text-fuchsia-600'>
-          Welcome to The Fake Store!
+          Welcome to The Fake Store!, {username}
         </h1>
         {products.length > 0 ? (
           <div className='flex flex-wrap mt-6 -mx-2'>

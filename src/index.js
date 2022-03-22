@@ -6,14 +6,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProductPage from './pages/product-page';
 import ProductDetailPage from './pages/product-detail-page';
 
+export const UserContext = React.createContext();
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<ProductPage />} />
-        <Route path='/product' element={<ProductDetailPage />} />
-      </Routes>
-    </BrowserRouter>
+    <UserContext.Provider value='Slamet'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<ProductPage />} />
+          <Route path='/product' element={<ProductDetailPage />} />
+        </Routes>
+      </BrowserRouter>
+    </UserContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

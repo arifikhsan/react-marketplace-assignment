@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -15,13 +16,6 @@ const ProductDetailPage = () => {
     fetchData();
   }, []);
 
-  if (product === {}) {
-    return (
-      <div className='min-h-screen p-4 text-center bg-gray-100'>
-        <p>Loading...</p>
-      </div>
-    );
-  }
   return (
     <div className='bg-gray-100'>
       <div className='max-w-3xl min-h-screen px-4 pt-8 pb-12 mx-auto md:px-0'>
